@@ -1,3 +1,4 @@
+import { Heading } from "@/components/typography/Heading";
 import { Container } from "../components/container/Container";
 
 export default function Home() {
@@ -6,10 +7,10 @@ export default function Home() {
       <Container>
         <section id="save">
           <div className="flex">
-            <div className="flex-1 h-[500px] overflow-y-scroll">
-              <h3 className="sticky top-0 bg-neutral-800 py-6">
+            <div className="flex-1 h-[500px] overflow-y-scroll text-white">
+              <Heading tag="h3" className="sticky top-0 bg-neutral-800 py-6">
                 Save Gary the Snail{"'"}s Mansion
-              </h3>
+              </Heading>
               <div className="space-y-4 p-2">
                 <p>
                   Alright, alright, gather around folks, because Gary the Snail
@@ -85,10 +86,10 @@ export default function Home() {
         <section id="token">
           <div className="flex">
             <div className="flex-1"></div>
-            <div className="flex-1 h-[500px] overflow-y-scroll">
-              <h3 className="sticky top-0 bg-neutral-800 py-6">
+            <div className="flex-1 h-[500px] overflow-y-scroll text-white">
+              <Heading tag="h3" className="sticky top-0 bg-neutral-800 py-6">
                 Gary{"'"}s Meme-tacular Tokenomics Reveal! 🐌🪙💡
-              </h3>
+              </Heading>
               <div className="space-y-4 p-2">
                 <p>
                   Alright, you savvy future snail-coin billionaires, brace your
