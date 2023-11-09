@@ -1,14 +1,16 @@
 import { Heading } from "@/components/typography/Heading";
-import { Container } from "../components/container/Container";
+import { Container } from "@/components/container/Container";
+import Image from "next/image";
+import { ImageComparison } from "./page-sections/ImageComparison";
 
 export default function Home() {
   return (
     <main className="min-h-screen py-24 bg-neutral-800">
       <Container>
-        <section id="save">
-          <div className="flex">
-            <div className="flex-1 h-[500px] overflow-y-scroll text-white">
-              <Heading tag="h3" className="sticky top-0 bg-neutral-800 py-6">
+        <section id="save" className="mb-40">
+          <div className="flex gap-4">
+            <div className="flex-1 h-[550px] overflow-y-scroll text-white">
+              <Heading tag="h3" className="sticky top-0 bg-neutral-800 pb-6">
                 Save Gary the Snail{"'"}s Mansion
               </Heading>
               <div className="space-y-4 p-2">
@@ -80,14 +82,34 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="flex-1"></div>
+            <div className="flex-1 h-[550px]">
+              <ImageComparison
+                normalImageProps={{
+                  src: "/save-gary.jpeg",
+                  alt: "Save Gary",
+                }}
+                blurredImageProps={{
+                  src: "/save-gary-blurred.png",
+                  alt: "Save Gary",
+                }}
+              />
+            </div>
           </div>
         </section>
-        <section id="token">
-          <div className="flex">
-            <div className="flex-1"></div>
-            <div className="flex-1 h-[500px] overflow-y-scroll text-white">
-              <Heading tag="h3" className="sticky top-0 bg-neutral-800 py-6">
+        <section id="token" className="mb-40">
+          <div className="flex gap-4">
+            <div className="flex-1 h-[550px]">
+              <div className="w-full h-full relative">
+                <Image
+                  src="/token.jpeg"
+                  alt="Token"
+                  fill={true}
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            </div>
+            <div className="flex-1 h-[550px] overflow-y-scroll text-white">
+              <Heading tag="h3" className="sticky top-0 bg-neutral-800 pb-6">
                 Gary{"'"}s Meme-tacular Tokenomics Reveal! 🐌🪙💡
               </Heading>
               <div className="space-y-4 p-2">
