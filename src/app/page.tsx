@@ -1,12 +1,37 @@
 import { Heading } from "@/components/typography/Heading";
 import { Container } from "@/components/container/Container";
-import Image from "next/image";
+import { Snail } from "@/components/svg";
 import { ImageComparison } from "./page-sections/ImageComparison";
 
 export default function Home() {
   return (
-    <main className="min-h-screen py-24 bg-neutral-800">
+    <main className="py-24 bg-neutral-800">
       <Container>
+        <section className="min-h-[calc(100vh-30rem)] mb-20 border-b-8 border-b-orange-600">
+          <div className="flex flex-col">
+            <div className="flex mt-auto">
+              <div className="flex-1">
+                <div className="flex flex-col gap-4 text-white">
+                  <Heading tag="h1">
+                    Gary introduces you the first meme coin with a meaning !
+                    What does that meme ?!
+                  </Heading>
+                  <div className="self-end">
+                    <Snail
+                      width={300}
+                      height={300}
+                      className="transform scale-x-[-1]"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div>
+                {/* TODO: Uniswap Widget */}
+                <div className="w-96 h-[36rem] bg-white"></div>
+              </div>
+            </div>
+          </div>
+        </section>
         <section id="save" className="mb-40">
           <div className="flex gap-4">
             <div className="flex-1 h-[550px] overflow-y-scroll text-white">
