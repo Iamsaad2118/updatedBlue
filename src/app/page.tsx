@@ -90,7 +90,7 @@ export default function Home() {
                 }}
                 blurredImageProps={{
                   src: "/save-gary-blurred.png",
-                  alt: "Save Gary",
+                  alt: "Save Gary blurred",
                 }}
               />
             </div>
@@ -99,14 +99,16 @@ export default function Home() {
         <section id="token" className="mb-40">
           <div className="flex gap-4">
             <div className="flex-1 h-[550px]">
-              <div className="w-full h-full relative">
-                <Image
-                  src="/token.jpeg"
-                  alt="Token"
-                  fill={true}
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
+              <ImageComparison
+                normalImageProps={{
+                  src: "/token.jpeg",
+                  alt: "Token",
+                }}
+                blurredImageProps={{
+                  src: "/token-blurred.png",
+                  alt: "Token blurred",
+                }}
+              />
             </div>
             <div className="flex-1 h-[550px] overflow-y-scroll text-white">
               <Heading tag="h3" className="sticky top-0 bg-neutral-800 pb-6">
