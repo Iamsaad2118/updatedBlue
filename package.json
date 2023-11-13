@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "generate:svg": "npx @svgr/cli --config-file svgr.config.js  -- src/assets",
+    "generate:svg-images": "npx @svgr/cli --config-file svgr-images.config.js  -- src/assets/svg-images",
+    "generate:svg-icons": "npx @svgr/cli --config-file svgr-icons.config.js  -- src/assets/svg-icons",
     "lint": "next lint"
   },
   "dependencies": {
