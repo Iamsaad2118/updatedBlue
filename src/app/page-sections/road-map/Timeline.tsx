@@ -47,7 +47,7 @@ export function Timeline() {
         <TimelinePhase
           key={i}
           index={i + 1}
-          isFinal={i === timelinePhases.length - 1}
+          isLastPhase={i === timelinePhases.length - 1}
           title={timelinePhase.title}
           content={timelinePhase.paragraphs.map((line, lineIndex) => (
             <p key={lineIndex}>{line}</p>

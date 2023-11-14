@@ -5,14 +5,14 @@ import { TimelinePhaseProgressIndicator } from "./TimelinePhaseProgressIndicator
 
 type TimelinePhaseProps = {
   index: number;
-  isFinal: boolean;
+  isLastPhase: boolean;
   title: string;
   content: React.ReactNode;
 };
 
 export function TimelinePhase({
   index,
-  isFinal,
+  isLastPhase,
   title,
   content,
 }: TimelinePhaseProps) {
@@ -44,7 +44,7 @@ export function TimelinePhase({
         </span>
       </div>
       <TimelinePhaseProgressIndicator
-        hasProgressBar={!isFinal}
+        hasProgressBar={!isLastPhase}
         className="absolute top-6 left-1/2 h-full"
       />
     </div>
