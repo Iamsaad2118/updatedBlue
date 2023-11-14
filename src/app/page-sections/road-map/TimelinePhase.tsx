@@ -1,6 +1,7 @@
-import { Water } from "@/components/icons";
+import React from "react";
 import { Heading } from "@/components/typography/Heading";
 import { twMerge } from "tailwind-merge";
+import { TimelinePhaseProgressIndicator } from "./TimelinePhaseProgressIndicator";
 
 type TimelinePhaseProps = {
   index: number;
@@ -42,23 +43,10 @@ export function TimelinePhase({
           Phase {index}
         </span>
       </div>
-      {!isFinal && (
-        <div className="absolute top-6 left-1/2 w-1 bg-cyan-500 h-full">
-          {/* TODO: implement progress bar height */}
-          <div className="w-full bg-orange-600" style={{ height: "0%" }}></div>
-        </div>
-      )}
-      <div
-        className={twMerge(
-          "absolute top-6 left-1/2 w-10 h-10 ml-[-19px] bg-orange-600 rounded-full",
-          "border-4 border-white",
-          "flex justify-center items-center",
-        )}
-      >
-        <span className="text-white">
-          <Water />
-        </span>
-      </div>
+      <TimelinePhaseProgressIndicator
+        hasProgressBar={!isFinal}
+        className="absolute top-6 left-1/2 h-full"
+      />
     </div>
   );
 }
