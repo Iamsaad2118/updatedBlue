@@ -16,6 +16,12 @@
   }
 }
 
+html {
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 200px;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
