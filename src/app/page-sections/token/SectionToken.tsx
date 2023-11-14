@@ -20,7 +20,7 @@ export function SectionToken() {
             />
           </div>
           <div className="flex-1 h-[550px] overflow-y-scroll text-white">
-            <Heading tag="h2" className="sticky top-0 bg-neutral-800 pb-6">
+            <Heading tag="h2" className="sticky top-0 bg-dark pb-6">
               Gary{"'"}s Meme-tacular Tokenomics Reveal! 🐌🪙💡
             </Heading>
             <div className="space-y-4 p-2">

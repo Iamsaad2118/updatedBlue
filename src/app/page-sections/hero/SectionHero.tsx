@@ -4,7 +4,7 @@ import { Heading } from "@/components/typography/Heading";
 
 export function SectionHero() {
   return (
-    <section className="min-h-[calc(100vh-30rem)] mb-20 border-b-8 border-b-orange-600">
+    <section className="min-h-[calc(100vh-30rem)] mb-20 border-b-8 border-b-primary">
       <Container>
         <div className="flex flex-col">
           <div className="flex mt-auto">

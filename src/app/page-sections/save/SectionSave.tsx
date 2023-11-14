@@ -8,7 +8,7 @@ export function SectionSave() {
       <Container>
         <div className="flex gap-4">
           <div className="flex-1 h-[550px] overflow-y-scroll text-white">
-            <Heading tag="h2" className="sticky top-0 bg-neutral-800 pb-6">
+            <Heading tag="h2" className="sticky top-0 bg-dark pb-6">
               Save Gary the Snail{"'"}s Mansion
             </Heading>
             <div className="space-y-4 p-2">

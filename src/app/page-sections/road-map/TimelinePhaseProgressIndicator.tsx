@@ -63,11 +63,11 @@ export function TimelinePhaseProgressIndicator({
       {hasProgressBar && (
         <div
           ref={progressIndicatorContainerRef}
-          className="absolute top-2 left-1/2 w-1 h-full bg-cyan-500"
+          className="absolute top-2 left-1/2 w-1 h-full bg-accent"
         >
           <div
             role="progressbar"
-            className="w-full bg-orange-600"
+            className="w-full bg-primary"
             style={{
               height: `${progressIndicatorHeight}px`,
             }}
@@ -80,10 +80,10 @@ export function TimelinePhaseProgressIndicator({
           "border-4 border-white",
           "flex justify-center items-center",
           "transition-colors duration-500",
-          isIntersecting ? "bg-orange-600" : "bg-white",
+          isIntersecting ? "bg-primary" : "bg-white",
         )}
       >
-        <span className={isIntersecting ? "text-white" : "text-orange-600"}>
+        <span className={isIntersecting ? "text-white" : "text-primary"}>
           <Water />
         </span>
       </div>

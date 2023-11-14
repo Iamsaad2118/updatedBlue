@@ -5,7 +5,7 @@ import { SectionHero } from "./page-sections/hero/SectionHero";
 
 export default function Home() {
   return (
-    <main className="py-24 bg-neutral-800">
+    <main className="py-24 bg-dark">
       <SectionHero />
       <SectionSave />
       <SectionToken />
