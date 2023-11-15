@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="h-72 bg-orange-600 py-4 border-t-4 border-t-cyan-500">
+    <footer className="h-72 bg-primary py-4 border-t-4 border-t-accent">
       <div className="flex flex-col items-center justify-between">
         <div className="flex-1 py-20">
           <Image
@@ -16,7 +16,7 @@ export function Footer() {
         </div>
         <div className="bg-white w-full">
           <Container>
-            <p className="text-orange-600 py-2">
+            <p className="text-primary py-2">
               © 2023 hamaca.io all rights reserved.
             </p>
           </Container>

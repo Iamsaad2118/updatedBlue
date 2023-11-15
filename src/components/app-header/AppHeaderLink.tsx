@@ -21,10 +21,7 @@ export function AppHeaderLink({
 
   return (
     <li
-      className={twMerge(
-        "p-4 m-2",
-        isActive ? "border-b-4 border-cyan-500" : "",
-      )}
+      className={twMerge("p-4 m-2", isActive ? "border-b-4 border-accent" : "")}
     >
       <Link {...props}>{children}</Link>
     </li>
