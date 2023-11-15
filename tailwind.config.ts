@@ -35,6 +35,20 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: {
+        "slide-in-from-left": {
+          "0%": { transform: "translateX(-150%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+        "slide-in-from-right": {
+          "0%": { transform: "translateX(150%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+      },
+      animation: {
+        "slide-in-from-left": "slide-in-from-left 1s ease-in-out",
+        "slide-in-from-right": "slide-in-from-right 1s ease-in-out",
+      },
     },
   },
   plugins: [],

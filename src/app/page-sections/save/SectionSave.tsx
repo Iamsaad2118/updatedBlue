@@ -1,13 +1,33 @@
+"use client";
+
+import React from "react";
+import { useInView } from "react-intersection-observer";
+import { twMerge } from "tailwind-merge";
 import { Heading } from "@/components/typography/Heading";
 import { ImageComparison } from "../ImageComparison";
 import { Container } from "@/components/container/Container";
 
 export function SectionSave() {
+  const [hasRevealed, setHasRevealed] = React.useState(false);
+
+  const { ref, inView } = useInView();
+
+  React.useEffect(() => {
+    if (inView) {
+      setHasRevealed(true);
+    }
+  }, [inView]);
+
   return (
-    <section id="save" className="mb-40">
+    <section ref={ref} id="save" className="mb-40">
       <Container>
         <div className="flex gap-4">
-          <div className="flex-1 h-[550px] overflow-y-scroll text-white">
+          <div
+            className={twMerge(
+              "flex-1 h-[550px] overflow-y-scroll text-white",
+              hasRevealed ? "motion-safe:animate-slide-in-from-left" : "",
+            )}
+          >
             <Heading tag="h2" className="sticky top-0 bg-dark pb-6">
               Save Gary the Snail{"'"}s Mansion
             </Heading>
@@ -80,7 +100,12 @@ export function SectionSave() {
               </p>
             </div>
           </div>
-          <div className="flex-1 h-[550px]">
+          <div
+            className={twMerge(
+              "flex-1 h-[550px]",
+              hasRevealed ? "motion-safe:animate-slide-in-from-right" : "",
+            )}
+          >
             <ImageComparison
               normalImageProps={{
                 src: "/save-gary.jpeg",

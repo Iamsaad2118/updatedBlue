@@ -1,13 +1,33 @@
+"use client";
+
+import React from "react";
+import { useInView } from "react-intersection-observer";
+import { twMerge } from "tailwind-merge";
 import { Heading } from "@/components/typography/Heading";
-import { ImageComparison } from "../ImageComparison";
 import { Container } from "@/components/container/Container";
+import { ImageComparison } from "../ImageComparison";
 
 export function SectionToken() {
+  const [hasRevealed, setHasRevealed] = React.useState(false);
+
+  const { ref, inView } = useInView();
+
+  React.useEffect(() => {
+    if (inView) {
+      setHasRevealed(true);
+    }
+  }, [inView]);
+
   return (
-    <section id="token" className="mb-40">
+    <section ref={ref} id="token" className="mb-40">
       <Container>
         <div className="flex gap-4">
-          <div className="flex-1 h-[550px]">
+          <div
+            className={twMerge(
+              "flex-1 h-[550px]",
+              hasRevealed ? "motion-safe:animate-slide-in-from-left" : "",
+            )}
+          >
             <ImageComparison
               normalImageProps={{
                 src: "/token.jpeg",
@@ -19,7 +39,12 @@ export function SectionToken() {
               }}
             />
           </div>
-          <div className="flex-1 h-[550px] overflow-y-scroll text-white">
+          <div
+            className={twMerge(
+              "flex-1 h-[550px] overflow-y-scroll text-white",
+              hasRevealed ? "motion-safe:animate-slide-in-from-right" : "",
+            )}
+          >
             <Heading tag="h2" className="sticky top-0 bg-dark pb-6">
               Gary{"'"}s Meme-tacular Tokenomics Reveal! 🐌🪙💡
             </Heading>
