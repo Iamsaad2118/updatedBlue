@@ -15,8 +15,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modals,
 }: {
   children: React.ReactNode;
+  modals: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -31,20 +33,14 @@ export default function RootLayout({
                 height={100}
               />
             </Link>
-            <AppHeader.Nav className="hidden md:block">
-              <AppHeader.Link href="/">Home</AppHeader.Link>
-              <AppHeader.Link href="/#save">Save Gary</AppHeader.Link>
-              <AppHeader.Link href="/#token">Tokenomics</AppHeader.Link>
-              <AppHeader.Link href="/#road">Road Map</AppHeader.Link>
-              <AppHeader.Link href="/#">Gary Can Be Serious</AppHeader.Link>
-              <AppHeader.Link href="/">Message Gary</AppHeader.Link>
-            </AppHeader.Nav>
+            <AppHeader.Nav className="hidden md:block" />
           </div>
           <div>
             <button>Join Our Discord</button>
           </div>
         </AppHeader>
         {children}
+        {modals}
         <Footer />
       </body>
     </html>
