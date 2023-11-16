@@ -10,7 +10,8 @@ export function LitepaperModal({ open, onClose }: LitepaperModalProps) {
       onClose={onClose}
       title="Hamaca Litepaper"
       description="Hamaca Project Litepaper"
-      withLogo={true}
+      hasLogo={true}
+      hasDecorator={true}
     >
       <div className="p-6 text-lg">
         <ol className="list-decimal p-6">
@@ -138,6 +139,7 @@ export function LitepaperModal({ open, onClose }: LitepaperModalProps) {
             https://etherscan.io/token/0x14A933E66db326db730a0189451b48951353A658
           </a>
         </p>
+        <button>Download PDF</button>
       </div>
     </Modal>
   );

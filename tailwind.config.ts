@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -12,11 +13,11 @@ const config: Config = {
       current: "currentColor",
       white: "#ffffff",
       black: "#000",
-      primary: "#EA792B",
-      secondary: "#54595F",
-      text: "#7A7A7A",
-      accent: "#55AECC",
-      dark: "#252525",
+      primary: "var(--primary-color, #EA792B)",
+      secondary: "var(--secondary-color, #54595F)",
+      text: "var(--text-color, #7A7A7A)",
+      accent: "var(--accent-color, #55AECC)",
+      dark: "var(--dark-color, #252525)",
       gray: {
         DEFAULT: "#5F5F5F",
         50: "#F5F5F5",
@@ -51,6 +52,21 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "animation-delay": (value) => {
+            return {
+              "animation-delay": value,
+            };
+          },
+        },
+        {
+          values: theme("transitionDelay"),
+        },
+      );
+    }),
+  ],
 };
 export default config;
