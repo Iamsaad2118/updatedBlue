@@ -4,6 +4,7 @@ import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { AppHeaderLink } from "./AppHeaderLink";
 import { CaretDown } from "../icons";
 import Link from "next/link";
+import { PropsWithChildren } from "react";
 
 type AppHeaderNavProps = {
   className?: string;
@@ -22,17 +23,11 @@ export function AppHeaderNav({ className }: AppHeaderNavProps) {
             Gary Can Be Serious
             <CaretDown />
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="absolute top-12 left-0 bg-white text-text">
-            <ul className="p-6 space-y-6">
-              <li>
-                <Link href="/litepaper">Litepaper</Link>
-              </li>
-              <li>
-                <Link href="/trading-control">Trading Control</Link>
-              </li>
-              <li>
-                <Link href="/legal">Legal</Link>
-              </li>
+          <NavigationMenu.Content className="absolute top-16 left-0 bg-white text-text shadow-md">
+            <ul className="flex flex-col w-max">
+              <NavListItem href="/litepaper">Litepaper</NavListItem>
+              <NavListItem href="/trading-control">Trading Control</NavListItem>
+              <NavListItem href="legal">Legal</NavListItem>
             </ul>
           </NavigationMenu.Content>
         </NavigationMenu.Item>
@@ -47,5 +42,20 @@ export function AppHeaderNav({ className }: AppHeaderNavProps) {
         </NavigationMenu.Item>
       </NavigationMenu.List>
     </NavigationMenu.Root>
+  );
+}
+
+function NavListItem({ href, children }: PropsWithChildren & { href: string }) {
+  return (
+    <li>
+      <NavigationMenu.Link asChild>
+        <Link
+          href={href}
+          className="block p-4 hover:bg-secondary hover:text-white transition-colors"
+        >
+          {children}
+        </Link>
+      </NavigationMenu.Link>
+    </li>
   );
 }

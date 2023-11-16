@@ -1,5 +1,8 @@
 import React from "react";
 import { Modal, ModalProps } from "@/components/modal/Modal";
+import { Button } from "@/components/button/Button";
+import { Heading } from "@/components/typography/Heading";
+import { FilePdf } from "@/components/icons";
 
 type LitepaperModalProps = Pick<ModalProps, "open" | "onClose">;
 
@@ -16,7 +19,7 @@ export function LitepaperModal({ open, onClose }: LitepaperModalProps) {
       <div className="p-6 text-lg">
         <ol className="list-decimal p-6">
           <li>
-            <strong>Introduction:</strong> <br />
+            <Heading tag="h4">Introduction:</Heading>
             Embark on the Hamaca journey, a pioneering venture intertwining
             sustainable tourism, environmental preservation, and community
             engagement. The quest commences at the ‘Gary’s Mansion Phase,’ the
@@ -24,7 +27,7 @@ export function LitepaperModal({ open, onClose }: LitepaperModalProps) {
             foundation for this avant-garde ecosystem.
           </li>
           <li>
-            <strong>Blockchain Ecosystem:</strong> <br />
+            <Heading tag="h4">Blockchain Ecosystem:</Heading>
             Central to Hamaca is a blockchain ecosystem fostering transparency,
             decentralization, and community governance. The Hamaca ERC-20 token
             on ETHEREUM (HAMA) serves as the cornerstone for engagement, while
@@ -33,7 +36,7 @@ export function LitepaperModal({ open, onClose }: LitepaperModalProps) {
             rewards.
           </li>
           <li>
-            <strong>Not an Investment Contract:</strong> <br />
+            <Heading tag="h4">Not an Investment Contract:</Heading>
             It is imperative to delineate that participation in Hamaca is a
             communal and ecological endeavour, not an investment contract. The
             ethos of Hamaca is rooted in collective action towards sustainable
@@ -41,8 +44,7 @@ export function LitepaperModal({ open, onClose }: LitepaperModalProps) {
             meme coin.
           </li>
           <li>
-            <strong>The Hamaca Foundation:</strong>
-            <br />
+            <Heading tag="h4">The Hamaca Foundation:</Heading>
             Early on, the establishment of the Hamaca Foundation is envisaged to
             provide tax receipts to initial IDO participants retaining their
             tokens, facilitating tax deductions against their benevolent
@@ -53,8 +55,7 @@ export function LitepaperModal({ open, onClose }: LitepaperModalProps) {
             regulatory milieu and further our project’s ambitions.
           </li>
           <li>
-            <strong>Community Governance via DAO:</strong>
-            <br />
+            <Heading tag="h4">Community Governance via DAO:</Heading>
             Hamaca envisions a Decentralized Autonomous Organization (DAO) for
             democratic governance, allowing community members to partake in
             pivotal decision-making processes, embodying a self-governed,
@@ -66,8 +67,9 @@ export function LitepaperModal({ open, onClose }: LitepaperModalProps) {
             thus synergizing well with the democratic ethos of the DAO.
           </li>
           <li>
-            <strong>Sustainable Tourism and Environmental Stewardship:</strong>
-            <br />
+            <Heading tag="h4">
+              Sustainable Tourism and Environmental Stewardship:
+            </Heading>
             Hamaca unveils a multifaceted strategy to create eco-friendly
             infrastructures for sustainable tourism while preserving 80% of the
             land for environmental conservation and education. This encompasses
@@ -78,8 +80,7 @@ export function LitepaperModal({ open, onClose }: LitepaperModalProps) {
             initiatives.
           </li>
           <li>
-            <strong>Tokenomics and Fundraising:</strong>
-            <br />
+            <Heading tag="h4">Tokenomics and Fundraising:</Heading>
             The fundraising odyssey is orchestrated around a tiered token
             offering mechanism. The Initial Decentralized Exchange Offering
             (IDO) serves as the conduit for offering 80% of Hamaca tokens to the
@@ -88,7 +89,7 @@ export function LitepaperModal({ open, onClose }: LitepaperModalProps) {
             implementation of sustainable&nbsp;eco-tourism accommodations.
           </li>
           <li>
-            <strong>Sustainable Ecosystem:</strong> <br />
+            <Heading tag="h4">Sustainable Ecosystem:</Heading>
             Hamaca champions sustainability, endorsing eco-friendly practices
             and renewable energy utilization. Economic growth in nearby
             communities is encouraged through local collaborations and a
@@ -96,50 +97,62 @@ export function LitepaperModal({ open, onClose }: LitepaperModalProps) {
             envisioned.
           </li>
           <li>
-            <strong>Marketing and Awareness:</strong> <br />A robust marketing
-            strategy encompassing online and offline channels, strategic
-            partnerships are envisaged to galvanize support and engagement for
-            the project.
+            <Heading tag="h4">Marketing and Awareness:</Heading>A robust
+            marketing strategy encompassing online and offline channels,
+            strategic partnerships are envisaged to galvanize support and
+            engagement for the project.
           </li>
         </ol>
-        <p>
-          <strong>Conclusion:</strong> <br />
-          The Hamaca Project unfolds a robust, community-centric blueprint
-          intertwining sustainable tourism and environmental conservation.
-          Leveraging innovative blockchain technology, it fosters a democratic
-          governance model and environmental stewardship, aspiring to pioneer a
-          new paradigm in sustainable tourism and conservation. Through a
-          meticulous fundraising strategy, legal structuring, and engaging
-          marketing endeavors, Hamaca endeavors to build an eco-conscious
-          community, underpinning its ambitions with a solid foundation laid
-          down at the ‘Gary’s Mansion Phase.’ The synergies between the
-          blockchain ecosystem, community governance, and sustainability
-          initiatives underscore Hamaca’s potential to create a meaningful and
-          enduring impact.
-        </p>
-        <p>
-          *BSL Group :{" "}
+        <div className="space-y-4">
+          <Heading tag="h4">Conclusion:</Heading>
+          <p>
+            The Hamaca Project unfolds a robust, community-centric blueprint
+            intertwining sustainable tourism and environmental conservation.
+            Leveraging innovative blockchain technology, it fosters a democratic
+            governance model and environmental stewardship, aspiring to pioneer
+            a new paradigm in sustainable tourism and conservation. Through a
+            meticulous fundraising strategy, legal structuring, and engaging
+            marketing endeavors, Hamaca endeavors to build an eco-conscious
+            community, underpinning its ambitions with a solid foundation laid
+            down at the ‘Gary’s Mansion Phase.’ The synergies between the
+            blockchain ecosystem, community governance, and sustainability
+            initiatives underscore Hamaca’s potential to create a meaningful and
+            enduring impact.
+          </p>
+          <p>
+            *BSL Group :{" "}
+            <a
+              className="text-primary"
+              href="https://bsl.group/"
+              target="_blank"
+              rel="noopener"
+            >
+              https://bsl.group/
+            </a>
+          </p>
+          <p>
+            *HAMACA Token Symbol : HAMA contract :{" "}
+            <a
+              className="text-primary"
+              href="https://etherscan.io/token/0x14A933E66db326db730a0189451b48951353A658"
+              target="_blank"
+              rel="noopener"
+            >
+              https://etherscan.io/token/0x14A933E66db326db730a0189451b48951353A658
+            </a>
+          </p>
+        </div>
+        <div className="mt-8">
           <a
-            className="text-primary"
-            href="https://bsl.group/"
+            href="http://hamaca.io/wp-content/uploads/2023/10/HamacaLitepaper18102023.doc.pdf"
             target="_blank"
-            rel="noopener"
           >
-            https://bsl.group/
+            <Button variant="primary" className="flex items-center gap-2">
+              <FilePdf />
+              <span>Download PDF</span>
+            </Button>
           </a>
-        </p>
-        <p>
-          *HAMACA Token Symbol : HAMA contract :{" "}
-          <a
-            className="text-primary"
-            href="https://etherscan.io/token/0x14A933E66db326db730a0189451b48951353A658"
-            target="_blank"
-            rel="noopener"
-          >
-            https://etherscan.io/token/0x14A933E66db326db730a0189451b48951353A658
-          </a>
-        </p>
-        <button>Download PDF</button>
+        </div>
       </div>
     </Modal>
   );

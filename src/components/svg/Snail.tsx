@@ -18,7 +18,6 @@ const SvgSnail = (
       height: "100%",
     }}
     viewBox="0 0 3441 3811"
-    transform="translate3d(0,0,0)"
     role="img"
     ref={ref}
     aria-labelledby={titleId}

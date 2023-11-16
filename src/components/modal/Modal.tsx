@@ -39,7 +39,10 @@ export function Modal({
     <Dialog.Root
       open={open}
       onOpenChange={(open) => {
-        if (!open) onClose();
+        if (!open) {
+          setHasRevealed(false);
+          onClose();
+        }
       }}
     >
       <Dialog.Portal>
