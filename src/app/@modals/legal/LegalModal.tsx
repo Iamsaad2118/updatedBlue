@@ -5,7 +5,7 @@ type LegalModalProps = Pick<ModalProps, "open" | "onClose">;
 
 export function LegalModal({ open, onClose }: LegalModalProps) {
   return (
-    <Modal open={open} onClose={onClose} title="Legal" className="w-[600px]">
+    <Modal open={open} onClose={onClose} title="Legal" className="md:w-[600px]">
       <div className="p-6">
         <p className="text-lg">
           As the treasury burgeons with the mellifluous clink of newfound

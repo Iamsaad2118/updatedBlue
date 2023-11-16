@@ -1,9 +1,11 @@
-import * as Dialog from "@radix-ui/react-dialog";
-import Image from "next/image";
 import React, { PropsWithChildren } from "react";
+import Image from "next/image";
 import { twMerge } from "tailwind-merge";
-import { Decorator, Snail } from "../svg";
 import { useInView } from "react-intersection-observer";
+import * as Dialog from "@radix-ui/react-dialog";
+import { Decorator, Snail } from "../svg";
+import { Button } from "../button/Button";
+import { Xmark } from "../icons";
 
 export type ModalProps = PropsWithChildren & {
   open: boolean;
@@ -49,12 +51,20 @@ export function Modal({
         <Dialog.Overlay className="fixed z-50 inset-0 bg-black opacity-60" />
         <Dialog.Content
           className={twMerge(
-            "fixed z-50 top-1/2 left-1/2 bg-accent text-white",
+            "fixed isolate z-50 top-1/2 left-1/2 bg-accent text-white",
             "-translate-x-1/2 -translate-y-1/2 rounded-lg shadow-lg shadow-black/20",
             "w-[85vw] max-h-[75vh] overflow-auto",
             className,
           )}
         >
+          <Dialog.Close asChild>
+            <Button
+              aria-label="Close"
+              className="absolute z-10 top-0 right-0 bg-transparent"
+            >
+              <Xmark />
+            </Button>
+          </Dialog.Close>
           <div className="relative flex flex-col gap-4 items-center p-6">
             {hasDecorator && (
               <div className="absolute top-4 w-full overflow-hidden">

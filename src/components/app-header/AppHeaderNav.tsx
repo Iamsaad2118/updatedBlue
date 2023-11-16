@@ -1,10 +1,10 @@
 "use client";
 
+import { PropsWithChildren } from "react";
+import Link from "next/link";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { AppHeaderLink } from "./AppHeaderLink";
 import { CaretDown } from "../icons";
-import Link from "next/link";
-import { PropsWithChildren } from "react";
 
 type AppHeaderNavProps = {
   className?: string;
@@ -13,17 +13,17 @@ type AppHeaderNavProps = {
 export function AppHeaderNav({ className }: AppHeaderNavProps) {
   return (
     <NavigationMenu.Root className={className}>
-      <NavigationMenu.List className="flex items-center gap-6">
+      <NavigationMenu.List className="flex flex-col lg:flex-row items-center gap-2 md:gap-4 lg:gap-6">
         <AppHeaderLink href="/">Home</AppHeaderLink>
         <AppHeaderLink href="/#save">Save Gary</AppHeaderLink>
         <AppHeaderLink href="/#token">Tokenomics</AppHeaderLink>
         <AppHeaderLink href="/#road">Road Map</AppHeaderLink>
-        <NavigationMenu.Item className="relative">
+        <NavigationMenu.Item className="relative p-2">
           <NavigationMenu.Trigger className="flex items-center gap-2">
             Gary Can Be Serious
             <CaretDown />
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="absolute top-16 left-0 bg-white text-text shadow-md">
+          <NavigationMenu.Content className="static lg:absolute top-8 md:top-16 left-0 bg-white text-text shadow-md">
             <ul className="flex flex-col w-max">
               <NavListItem href="/litepaper">Litepaper</NavListItem>
               <NavListItem href="/trading-control">Trading Control</NavListItem>

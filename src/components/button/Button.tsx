@@ -17,7 +17,7 @@ export function Button({
         "px-6 py-4 rounded-md",
         variant === "primary"
           ? "bg-primary text-white"
-          : "bg-white text-primary",
+          : "bg-white text-primary hover:text-accent",
         className,
       )}
       {...rest}

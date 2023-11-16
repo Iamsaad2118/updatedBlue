@@ -21,14 +21,15 @@ export function SectionToken() {
   return (
     <section ref={ref} id="token" className="mb-40">
       <Container>
-        <div className="flex gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <div
             className={twMerge(
-              "flex-1 h-[550px]",
+              "flex-1 max-h-[550px]",
               hasRevealed ? "motion-safe:animate-slide-in-from-left" : "",
             )}
           >
             <ImageComparison
+              className="h-[550px]"
               normalImageProps={{
                 src: "/token.jpeg",
                 alt: "Token",
@@ -41,7 +42,7 @@ export function SectionToken() {
           </div>
           <div
             className={twMerge(
-              "flex-1 h-[550px] overflow-y-scroll text-white",
+              "flex-1 max-h-[550px] overflow-y-scroll text-white",
               hasRevealed ? "motion-safe:animate-slide-in-from-right" : "",
             )}
           >

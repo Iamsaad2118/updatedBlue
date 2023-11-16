@@ -22,7 +22,12 @@ export function AppHeaderLink({
 
   return (
     <NavigationMenu.Item
-      className={twMerge("p-4 m-2", isActive ? "border-b-4 border-accent" : "")}
+      className={twMerge(
+        "relative flex justify-center p-0 md:p-4 m-2",
+        isActive
+          ? "before:absolute before:bottom-0 before:w-full before:h-1 before:bg-accent"
+          : "",
+      )}
     >
       <Link {...props}>{children}</Link>
     </NavigationMenu.Item>

@@ -1,15 +1,18 @@
 "use client";
 
-import { useMousePosition } from "@/lib/hooks/useMousePosition";
-import Image, { ImageProps } from "next/image";
 import React from "react";
+import Image, { ImageProps } from "next/image";
+import { twMerge } from "tailwind-merge";
+import { useMousePosition } from "@/lib/hooks/useMousePosition";
 
 type ImageComparisonProps = {
+  className?: string;
   normalImageProps: ImageProps;
   blurredImageProps: ImageProps;
 };
 
 export function ImageComparison({
+  className,
   normalImageProps,
   blurredImageProps,
 }: ImageComparisonProps) {
@@ -38,7 +41,10 @@ export function ImageComparison({
     )`;
 
   return (
-    <div ref={containerRef} className="w-full h-full relative isolate">
+    <div
+      ref={containerRef}
+      className={twMerge("w-full h-full relative isolate", className)}
+    >
       <Image
         {...blurredImageProps}
         alt={blurredImageProps.alt}

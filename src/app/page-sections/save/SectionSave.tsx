@@ -3,9 +3,9 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import { twMerge } from "tailwind-merge";
+import { Container } from "@/components/container/Container";
 import { Heading } from "@/components/typography/Heading";
 import { ImageComparison } from "../ImageComparison";
-import { Container } from "@/components/container/Container";
 
 export function SectionSave() {
   const [hasRevealed, setHasRevealed] = React.useState(false);
@@ -21,10 +21,10 @@ export function SectionSave() {
   return (
     <section ref={ref} id="save" className="mb-40">
       <Container>
-        <div className="flex gap-4">
+        <div className="flex flex-col md:flex-row gap-4">
           <div
             className={twMerge(
-              "flex-1 h-[550px] overflow-y-scroll text-white",
+              "flex-1 max-h-[550px] overflow-y-scroll text-white",
               hasRevealed ? "motion-safe:animate-slide-in-from-left" : "",
             )}
           >
@@ -102,11 +102,12 @@ export function SectionSave() {
           </div>
           <div
             className={twMerge(
-              "flex-1 h-[550px]",
+              "flex-1",
               hasRevealed ? "motion-safe:animate-slide-in-from-right" : "",
             )}
           >
             <ImageComparison
+              className="h-[550px]"
               normalImageProps={{
                 src: "/save-gary.jpeg",
                 alt: "Save Gary",
