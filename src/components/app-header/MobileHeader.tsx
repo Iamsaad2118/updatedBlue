@@ -38,7 +38,11 @@ export function MobileHeader({ className }: { className?: string }) {
             </Button>
           </a>
         </div>
-        <Button onClick={() => setOpen(!open)} className="text-xl">
+        <Button
+          onClick={() => setOpen(!open)}
+          className="text-xl"
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+        >
           {open ? <Xmark /> : <Bars />}
         </Button>
         {open && <AppHeader.Nav className="bg-white text-text p-4" />}

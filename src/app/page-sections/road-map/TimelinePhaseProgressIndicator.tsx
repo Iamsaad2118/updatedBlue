@@ -67,6 +67,7 @@ export function TimelinePhaseProgressIndicator({
         >
           <div
             role="progressbar"
+            aria-label="Timeline phase progress"
             className="w-full bg-primary"
             style={{
               height: `${progressIndicatorHeight}px`,

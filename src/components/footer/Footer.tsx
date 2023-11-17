@@ -26,6 +26,7 @@ export function Footer() {
                   href="https://discord.com/invite/aDXHy4D8vw"
                   target="_blank"
                   className="block text-primary p-2 text-lg"
+                  aria-label="Check out our Discord server"
                 >
                   <Discord />
                 </a>
@@ -33,6 +34,7 @@ export function Footer() {
                   href="https://twitter.com/hamacaDAO"
                   target="_blank"
                   className="block text-primary p-2 text-lg"
+                  aria-label="Follow us on Twitter/X"
                 >
                   <XTwitter />
                 </a>
