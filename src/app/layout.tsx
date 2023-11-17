@@ -21,6 +21,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
+      />
       <body className={inter.className}>
         <DesktopHeader className="hidden lg:block" />
         <MobileHeader className="block lg:hidden" />

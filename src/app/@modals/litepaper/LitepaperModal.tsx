@@ -1,6 +1,5 @@
 import React from "react";
 import { Modal, ModalProps } from "@/components/modal/Modal";
-import { Button } from "@/components/button/Button";
 import { Heading } from "@/components/typography/Heading";
 import { FilePdf } from "@/components/icons";
 
@@ -162,13 +161,13 @@ export function LitepaperModal({ open, onClose }: LitepaperModalProps) {
         </div>
         <div className="mt-8">
           <a
-            href="http://hamaca.io/wp-content/uploads/2023/10/HamacaLitepaper18102023.doc.pdf"
+            href="/hamaca-litepaper.pdf"
             target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-primary text-white px-6 py-2 rounded-md"
           >
-            <Button variant="primary" className="flex items-center gap-2">
-              <FilePdf />
-              <span>Download PDF</span>
-            </Button>
+            <FilePdf />
+            <span>Download PDF</span>
           </a>
         </div>
       </div>

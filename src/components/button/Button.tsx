@@ -1,18 +1,17 @@
-import { ButtonHTMLAttributes } from "react";
+import React, { ButtonHTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary";
 }
 
-export function Button({
-  variant = "primary",
-  className,
-  children,
-  ...rest
-}: ButtonProps) {
+const Button: React.ForwardRefRenderFunction<null, ButtonProps> = (
+  { variant = "primary", className, children, ...rest },
+  ref,
+) => {
   return (
     <button
+      ref={ref}
       className={twMerge(
         "px-6 py-4 rounded-md",
         variant === "primary"
@@ -25,4 +24,8 @@ export function Button({
       {children}
     </button>
   );
-}
+};
+
+const ForwardedButton = React.forwardRef(Button);
+
+export { ForwardedButton as Button };

@@ -1,9 +1,9 @@
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, RefObject } from "react";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
-import { useInView } from "react-intersection-observer";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Decorator, Snail } from "../svg";
+import { useReveal } from "@/lib/hooks/useReveal";
+import { Decorator } from "../svg";
 import { Button } from "../button/Button";
 import { Xmark } from "../icons";
 
@@ -15,6 +15,8 @@ export type ModalProps = PropsWithChildren & {
   hasLogo?: boolean;
   hasDecorator?: boolean;
   className?: string;
+  triggerButton?: React.ReactNode;
+  restoreFocusElement?: RefObject<HTMLButtonElement>;
 };
 
 export function Modal({
@@ -26,16 +28,10 @@ export function Modal({
   hasLogo,
   hasDecorator,
   className,
+  triggerButton,
+  restoreFocusElement,
 }: ModalProps) {
-  const [hasRevealed, setHasRevealed] = React.useState(false);
-
-  const { ref, inView } = useInView();
-
-  React.useEffect(() => {
-    if (inView) {
-      setHasRevealed(true);
-    }
-  }, [inView]);
+  const { ref, hasRevealed, setHasRevealed } = useReveal();
 
   return (
     <Dialog.Root
@@ -47,15 +43,31 @@ export function Modal({
         }
       }}
     >
+      {triggerButton && (
+        <Dialog.Trigger ref={restoreFocusElement} asChild>
+          {triggerButton}
+        </Dialog.Trigger>
+      )}
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed z-50 inset-0 bg-black opacity-60" />
+        <Dialog.Overlay
+          className={twMerge(
+            "fixed z-50 inset-0 bg-black opacity-60",
+            open ? "animate-fade-in" : "animate-fade-out",
+          )}
+        />
         <Dialog.Content
           className={twMerge(
             "fixed isolate z-50 top-1/2 left-1/2 bg-accent text-white",
             "-translate-x-1/2 -translate-y-1/2 rounded-lg shadow-lg shadow-black/20",
             "w-[85vw] max-h-[75vh] overflow-auto",
             className,
+            open
+              ? "motion-safe:animate-zoom-in"
+              : "motion-safe:animate-zoom-out",
           )}
+          onCloseAutoFocus={() => {
+            restoreFocusElement?.current?.focus();
+          }}
         >
           <Dialog.Close asChild>
             <Button
@@ -104,7 +116,7 @@ export function Modal({
                     : "opacity-0"
                 }
               >
-                <Snail width={300} height={300} />
+                <Image src="/snail.png" alt="Snail" width={240} height={240} />
               </div>
             </div>
           </div>

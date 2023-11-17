@@ -1,6 +1,6 @@
 import React from "react";
-import { Heading } from "@/components/typography/Heading";
 import { twMerge } from "tailwind-merge";
+import { Heading } from "@/components/typography/Heading";
 import { TimelinePhaseProgressIndicator } from "./TimelinePhaseProgressIndicator";
 
 type TimelinePhaseProps = {

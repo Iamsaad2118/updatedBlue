@@ -1,7 +1,6 @@
 import React from "react";
 import { Modal, ModalProps } from "@/components/modal/Modal";
 import { Heading } from "@/components/typography/Heading";
-import { Button } from "@/components/button/Button";
 
 type TradingControlModalProps = Pick<ModalProps, "open" | "onClose">;
 
@@ -63,8 +62,9 @@ export function TradingControlModal({
           <a
             href="https://etherscan.io/token/0x14A933E66db326db730a0189451b48951353A658#code"
             target="_blank"
+            className="block text-center px-6 py-2 rounded-md bg-primary text-white"
           >
-            <Button className="w-full">Read Here</Button>
+            Read Here
           </a>
         </div>
         <div>

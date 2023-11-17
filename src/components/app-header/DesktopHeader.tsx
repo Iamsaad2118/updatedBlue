@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import { AppHeader } from "./AppHeader";
-import { Button } from "../button/Button";
 import { Discord } from "../icons";
 
 export function DesktopHeader({ className }: { className?: string }) {
@@ -16,11 +15,14 @@ export function DesktopHeader({ className }: { className?: string }) {
         </Link>
         <AppHeader.Nav />
       </div>
-      <a href="https://discord.com/invite/aDXHy4D8vw" target="_blank">
-        <Button variant="secondary" className="flex items-center gap-2">
-          <span>Join Our Discord</span>
-          <Discord />
-        </Button>
+      <a
+        href="https://discord.com/invite/aDXHy4D8vw"
+        target="_blank"
+        role="button"
+        className="flex items-center gap-2 px-6 py-2 bg-white text-primary hover:text-accent"
+      >
+        <span>Join Our Discord</span>
+        <Discord />
       </a>
     </AppHeader>
   );

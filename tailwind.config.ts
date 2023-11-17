@@ -45,10 +45,42 @@ const config: Config = {
           "0%": { transform: "translateX(150%)" },
           "100%": { transform: "translateX(0)" },
         },
+        "slide-in-from-bottom": {
+          "0%": { transform: "translateY(100%)", opacity: "0%" },
+          "100%": { transform: "translateX(0%)", opacity: "100%" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0%" },
+          "100%": { opacity: "60%" },
+        },
+        "fade-out": {
+          "0%": { opacity: "60%" },
+          "100%": { opacity: "0%" },
+        },
+        "zoom-in": {
+          "0%": { transform: "translateX(-50%) translateY(-50%) scale(0.5)" },
+          "100%": { transform: "translateX(-50%) translateY(-50%) scale(1)" },
+        },
+        "zoom-out": {
+          "0%": { transform: "translateX(-50%) translateY(-50%) scale(1)" },
+          "100%": {
+            transform: "translateX(-50%) translateY(-50%) scale(0.5)",
+          },
+        },
+        snail: {
+          "0%": { transform: "translateX(200%) scaleX(-1)", opacity: "0%" },
+          "100%": { transform: "translateX(0) scaleX(-1)", opacity: "100%" },
+        },
       },
       animation: {
         "slide-in-from-left": "slide-in-from-left 1s ease-in-out",
         "slide-in-from-right": "slide-in-from-right 1s ease-in-out",
+        "slide-in-from-bottom": "slide-in-from-bottom 1s ease-in-out",
+        "fade-in": "fade-in 1s ease-in-out",
+        "fade-out": "fade-out 1s ease-in-out",
+        "zoom-in": "zoom-in 0.7s ease-in-out",
+        "zoom-out": "zoom-out 0.5s ease-in-out",
+        snail: "snail 2s ease-in-out",
       },
     },
   },

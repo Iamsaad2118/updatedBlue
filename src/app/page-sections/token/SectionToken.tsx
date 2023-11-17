@@ -1,25 +1,16 @@
 "use client";
 
-import React from "react";
-import { useInView } from "react-intersection-observer";
 import { twMerge } from "tailwind-merge";
 import { Heading } from "@/components/typography/Heading";
 import { Container } from "@/components/container/Container";
 import { ImageComparison } from "../ImageComparison";
+import { useReveal } from "@/lib/hooks/useReveal";
 
 export function SectionToken() {
-  const [hasRevealed, setHasRevealed] = React.useState(false);
-
-  const { ref, inView } = useInView();
-
-  React.useEffect(() => {
-    if (inView) {
-      setHasRevealed(true);
-    }
-  }, [inView]);
+  const { ref, hasRevealed } = useReveal();
 
   return (
-    <section ref={ref} id="token" className="mb-40">
+    <section ref={ref} id="token" className="py-16">
       <Container>
         <div className="flex flex-col md:flex-row gap-4">
           <div
