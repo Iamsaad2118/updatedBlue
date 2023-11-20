@@ -139,7 +139,7 @@ export function LitepaperModal({ open, onClose }: LitepaperModalProps) {
           <p>
             *BSL Group :{" "}
             <a
-              className="text-primary"
+              className="text-primary bg-dark"
               href="https://bsl.group/"
               target="_blank"
               rel="noopener"
@@ -150,7 +150,7 @@ export function LitepaperModal({ open, onClose }: LitepaperModalProps) {
           <div style={{ wordBreak: "break-word" }}>
             <p>*HAMACA Token Symbol : HAMA contract : </p>
             <a
-              className="text-primary"
+              className="text-primary bg-dark"
               href="https://etherscan.io/token/0x14A933E66db326db730a0189451b48951353A658"
               target="_blank"
               rel="noopener"

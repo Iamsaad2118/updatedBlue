@@ -1,13 +1,16 @@
 "use client";
 
+import { useInView } from "react-intersection-observer";
 import { twMerge } from "tailwind-merge";
 import { Heading } from "@/components/typography/Heading";
 import { Container } from "@/components/container/Container";
 import { ImageComparison } from "../ImageComparison";
-import { useReveal } from "@/lib/hooks/useReveal";
+import { CSSProperties } from "react";
 
 export function SectionToken() {
-  const { ref, hasRevealed } = useReveal();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
 
   return (
     <section ref={ref} id="token" className="py-16">
@@ -16,7 +19,7 @@ export function SectionToken() {
           <div
             className={twMerge(
               "flex-1 max-h-[550px]",
-              hasRevealed ? "motion-safe:animate-slide-in-from-left" : "",
+              inView ? "lg:motion-safe:animate-slide-in-from-left" : "",
             )}
           >
             <ImageComparison
@@ -33,9 +36,14 @@ export function SectionToken() {
           </div>
           <div
             className={twMerge(
-              "flex-1 max-h-[550px] overflow-y-scroll text-white",
-              hasRevealed ? "motion-safe:animate-slide-in-from-right" : "",
+              "flex-1 max-h-[550px] overflow-y-scroll custom-scrollbar text-white",
+              inView ? "lg:motion-safe:animate-slide-in-from-right" : "",
             )}
+            style={
+              {
+                "--custom-scrollbar-color": "var(--accent-color)",
+              } as CSSProperties
+            }
           >
             <Heading tag="h2" className="sticky top-0 bg-dark pb-6">
               Gary{"'"}s Meme-tacular Tokenomics Reveal! 🐌🪙💡

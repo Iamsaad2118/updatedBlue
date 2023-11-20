@@ -15,7 +15,7 @@ export function DescriptionModal() {
       className="md:w-[600px]"
       triggerButton={
         <Button
-          className="hover:bg-accent focus:bg-accent transition-colors"
+          className="text-lg hover:bg-accent focus:bg-accent transition-colors animate-grow-and-shrink"
           onClick={() => setOpen(true)}
         >
           Learn Here

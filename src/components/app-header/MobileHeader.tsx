@@ -21,6 +21,7 @@ export function MobileHeader({ className }: { className?: string }) {
               alt="Hamaca logo"
               width={100}
               height={100}
+              className="w-auto"
             />
           </Link>
         </div>

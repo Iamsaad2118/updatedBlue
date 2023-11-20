@@ -49,6 +49,7 @@ export function ImageComparison({
         {...blurredImageProps}
         alt={blurredImageProps.alt}
         fill={true}
+        sizes="(max-width: 640px) 100vw, 50vw"
         style={{
           objectFit: "cover",
           clipPath,
@@ -59,6 +60,7 @@ export function ImageComparison({
         {...normalImageProps}
         alt={normalImageProps.alt}
         fill={true}
+        sizes="(max-width: 640px) 100vw, 50vw"
         style={{ objectFit: "cover" }}
         className="z-0"
       />

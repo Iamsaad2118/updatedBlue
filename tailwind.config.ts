@@ -51,10 +51,10 @@ const config: Config = {
         },
         "fade-in": {
           "0%": { opacity: "0%" },
-          "100%": { opacity: "60%" },
+          "100%": { opacity: "80%" },
         },
         "fade-out": {
-          "0%": { opacity: "60%" },
+          "0%": { opacity: "80%" },
           "100%": { opacity: "0%" },
         },
         "zoom-in": {
@@ -65,6 +65,17 @@ const config: Config = {
           "0%": { transform: "translateX(-50%) translateY(-50%) scale(1)" },
           "100%": {
             transform: "translateX(-50%) translateY(-50%) scale(0.5)",
+          },
+        },
+        "grow-and-shrink": {
+          "0%": {
+            transform: "scale(1)",
+          },
+          "50%": {
+            transform: "scale(1.1)",
+          },
+          "100%": {
+            transform: "scale(1)",
           },
         },
         snail: {
@@ -80,6 +91,7 @@ const config: Config = {
         "fade-out": "fade-out 1s ease-in-out",
         "zoom-in": "zoom-in 0.7s ease-in-out",
         "zoom-out": "zoom-out 0.5s ease-in-out",
+        "grow-and-shrink": "grow-and-shrink 2s infinite ease-in-out",
         snail: "snail 2s ease-in-out",
       },
     },

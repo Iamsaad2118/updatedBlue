@@ -2,7 +2,7 @@ import React, { PropsWithChildren, RefObject } from "react";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import * as Dialog from "@radix-ui/react-dialog";
-import { useReveal } from "@/lib/hooks/useReveal";
+import { useInView } from "react-intersection-observer";
 import { Decorator } from "../svg";
 import { Button } from "../button/Button";
 import { Xmark } from "../icons";
@@ -31,7 +31,15 @@ export function Modal({
   triggerButton,
   restoreFocusElement,
 }: ModalProps) {
-  const { ref, hasRevealed, setHasRevealed } = useReveal();
+  const [hasRevealed, setHasRevealed] = React.useState(false);
+
+  const { ref, inView } = useInView();
+
+  React.useEffect(() => {
+    if (inView) {
+      setHasRevealed(true);
+    }
+  }, [inView]);
 
   return (
     <Dialog.Root
@@ -51,7 +59,7 @@ export function Modal({
       <Dialog.Portal>
         <Dialog.Overlay
           className={twMerge(
-            "fixed z-50 inset-0 bg-black opacity-60",
+            "fixed z-50 inset-0 bg-black opacity-80",
             open ? "animate-fade-in" : "animate-fade-out",
           )}
         />
@@ -116,7 +124,13 @@ export function Modal({
                     : "opacity-0"
                 }
               >
-                <Image src="/snail.png" alt="Snail" width={240} height={240} />
+                <Image
+                  src="/snail.png"
+                  alt="Snail"
+                  width={240}
+                  height={240}
+                  className="w-auto"
+                />
               </div>
             </div>
           </div>
