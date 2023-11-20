@@ -11,7 +11,13 @@ export function DesktopHeader({ className }: { className?: string }) {
     >
       <div className="flex items-center flex-1 gap-2 xl:gap-6">
         <Link href="/">
-          <Image src="/logo.jpeg" alt="Hamaca logo" width={100} height={100} />
+          <Image
+            src="/logo.jpeg"
+            alt="Hamaca logo"
+            width={100}
+            height={100}
+            className="w-auto"
+          />
         </Link>
         <AppHeader.Nav />
       </div>

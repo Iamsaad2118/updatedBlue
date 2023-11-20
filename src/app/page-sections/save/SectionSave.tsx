@@ -1,23 +1,31 @@
 "use client";
 
+import { useInView } from "react-intersection-observer";
 import { twMerge } from "tailwind-merge";
 import { Container } from "@/components/container/Container";
 import { Heading } from "@/components/typography/Heading";
-import { useReveal } from "@/lib/hooks/useReveal";
 import { ImageComparison } from "../ImageComparison";
+import { CSSProperties } from "react";
 
 export function SectionSave() {
-  const { ref, hasRevealed } = useReveal();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
 
   return (
     <section ref={ref} id="save" className="py-16">
       <Container>
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col md:flex-row gap-4 h-[1100px] lg:h-auto">
           <div
             className={twMerge(
-              "flex-1 max-h-[550px] overflow-y-scroll text-white",
-              hasRevealed ? "motion-safe:animate-slide-in-from-left" : "",
+              "flex-1 max-h-[550px] overflow-y-scroll custom-scrollbar text-white",
+              inView ? "lg:motion-safe:animate-slide-in-from-left" : "",
             )}
+            style={
+              {
+                "--custom-scrollbar-color": "var(--primary-color)",
+              } as CSSProperties
+            }
           >
             <Heading tag="h2" className="sticky top-0 bg-dark pb-6">
               Save Gary the Snail{"'"}s Mansion
@@ -94,7 +102,7 @@ export function SectionSave() {
           <div
             className={twMerge(
               "flex-1",
-              hasRevealed ? "motion-safe:animate-slide-in-from-right" : "",
+              inView ? "lg:motion-safe:animate-slide-in-from-right" : "",
             )}
           >
             <ImageComparison

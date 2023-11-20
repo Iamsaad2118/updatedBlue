@@ -1,5 +1,5 @@
-import { Container } from "../container/Container";
 import Image from "next/image";
+import { Container } from "../container/Container";
 import { Discord, XTwitter } from "../icons";
 
 export function Footer() {
@@ -10,9 +10,10 @@ export function Footer() {
           <Image
             src="/logo.jpeg"
             alt="Hamaca Logo"
-            width={150}
+            width={124}
             height={37}
             priority
+            className="w-auto"
           />
         </div>
         <div className="bg-white w-full mb-6">

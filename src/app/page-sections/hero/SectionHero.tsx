@@ -1,13 +1,15 @@
 "use client";
 
+import { useInView } from "react-intersection-observer";
 import { Container } from "@/components/container/Container";
 import { Heading } from "@/components/typography/Heading";
-import { useReveal } from "@/lib/hooks/useReveal";
 import { AnimatedSnail } from "./AnimatedSnail";
 import { DescriptionModal } from "./DescriptionModal";
 
 export function SectionHero() {
-  const { ref, hasRevealed } = useReveal();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
 
   return (
     <section
@@ -35,7 +37,7 @@ export function SectionHero() {
                   <Heading
                     tag="h1"
                     className={
-                      hasRevealed
+                      inView
                         ? "opacity-1 transition-opacity delay-500 animate-slide-in-from-bottom animation-delay-500"
                         : "opacity-0"
                     }
@@ -51,7 +53,7 @@ export function SectionHero() {
                   <div className="h-80">
                     <AnimatedSnail
                       className={
-                        hasRevealed
+                        inView
                           ? "opacity-1 transition-opacity delay-[2s] animate-snail animation-delay-[2s]"
                           : "opacity-0"
                       }
