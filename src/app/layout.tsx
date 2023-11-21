@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Courier_Prime } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { DesktopHeader } from "@/components/app-header/DesktopHeader";
 import { MobileHeader } from "@/components/app-header/MobileHeader";
 import { Footer } from "@/components/footer/Footer";
 import "./globals.css";
 
-const inter = Courier_Prime({ weight: "400", subsets: ["latin"] });
+const inter = Poppins({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "HAMACA – Gary introduces you the first meme coin with a meaning",
