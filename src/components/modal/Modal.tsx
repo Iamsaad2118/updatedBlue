@@ -80,7 +80,7 @@ export function Modal({
           <Dialog.Close asChild>
             <Button
               aria-label="Close"
-              className="absolute z-10 top-0 right-0 bg-transparent"
+              className="absolute z-10 top-0 right-0 bg-transparent hover:opacity-70"
             >
               <Xmark />
             </Button>

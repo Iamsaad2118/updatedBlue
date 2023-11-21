@@ -21,15 +21,20 @@ export function AppHeaderLink({
   }, [href, pathname, params]);
 
   return (
-    <NavigationMenu.Item
-      className={twMerge(
-        "relative flex justify-center p-0 md:p-4 m-2",
-        isActive
-          ? "before:absolute before:bottom-0 before:w-full before:h-1 before:bg-accent"
-          : "",
-      )}
-    >
-      <Link {...props}>{children}</Link>
+    <NavigationMenu.Item>
+      <NavigationMenu.Link asChild>
+        <Link
+          {...props}
+          className={twMerge(
+            "relative flex justify-center p-0 md:p-4 m-2",
+            isActive
+              ? "before:absolute before:bottom-0 before:w-full before:h-1 before:bg-accent"
+              : "",
+          )}
+        >
+          {children}
+        </Link>
+      </NavigationMenu.Link>
     </NavigationMenu.Item>
   );
 }
