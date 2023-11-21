@@ -46,7 +46,9 @@ export function MobileHeader({ className }: { className?: string }) {
         >
           {open ? <Xmark /> : <Bars />}
         </Button>
-        {open && <AppHeader.Nav className="bg-white text-text p-4" />}
+        {open && (
+          <AppHeader.Nav className="bg-white text-text p-4 rounded-md" />
+        )}
       </div>
     </AppHeader>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import { twMerge } from "tailwind-merge";
 import { useInView } from "react-intersection-observer";
 import { Container } from "@/components/container/Container";
 import { Heading } from "@/components/typography/Heading";
@@ -21,7 +22,7 @@ export function SectionHero() {
           tabIndex={-1}
           className="absolute top-1/2 left-1/2 w-screen h-screen -translate-x-1/2 -translate-y-1/2 opacity-50 pointer-events-none"
           allowFullScreen={true}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
           title="Bacalar Cinematic Drone Video in Quintana Roo, Mexico in 4k"
           width="640"
           height="360"
@@ -32,15 +33,16 @@ export function SectionHero() {
         <div className="pt-24 pb-16 flex flex-col">
           <div className="flex flex-col lg:flex-row items-center gap-2 mt-auto">
             <div className="flex-1">
-              <div className="flex flex-col gap-4 text-white">
+              <div className="flex flex-col gap-4 lg:gap-8 text-white">
                 <div>
                   <Heading
                     tag="h1"
-                    className={
+                    className={twMerge(
+                      "tracking-wide",
                       inView
                         ? "opacity-1 transition-opacity delay-500 animate-slide-in-from-bottom animation-delay-500"
-                        : "opacity-0"
-                    }
+                        : "opacity-0",
+                    )}
                   >
                     Gary introduces you the first meme coin with a meaning !
                     What does that meme ?!
@@ -64,7 +66,7 @@ export function SectionHero() {
             </div>
             <div>
               {/* TODO: Uniswap Widget */}
-              <div className="w-96 h-[36rem] bg-white"></div>
+              <div className="w-96 h-[36rem] bg-white rounded-md"></div>
             </div>
           </div>
         </div>

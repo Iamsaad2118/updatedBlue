@@ -23,7 +23,7 @@ export function AppHeaderNav({ className }: AppHeaderNavProps) {
             Gary Can Be Serious
             <CaretDown />
           </NavigationMenu.Trigger>
-          <NavigationMenu.Content className="static lg:absolute top-8 md:top-16 left-0 bg-white text-text shadow-md">
+          <NavigationMenu.Content className="static lg:absolute top-8 md:top-16 left-0 bg-white text-text shadow-md rounded-md overflow-hidden">
             <ul className="flex flex-col w-max">
               <NavListItem href="/litepaper">Litepaper</NavListItem>
               <NavListItem href="/trading-control">Trading Control</NavListItem>

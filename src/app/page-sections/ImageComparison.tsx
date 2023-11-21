@@ -43,7 +43,10 @@ export function ImageComparison({
   return (
     <div
       ref={containerRef}
-      className={twMerge("w-full h-full relative isolate", className)}
+      className={twMerge(
+        "w-full h-full relative isolate rounded-md",
+        className,
+      )}
     >
       <Image
         {...blurredImageProps}
@@ -54,7 +57,7 @@ export function ImageComparison({
           objectFit: "cover",
           clipPath,
         }}
-        className="z-10"
+        className="z-10 rounded-md"
       />
       <Image
         {...normalImageProps}
@@ -62,7 +65,7 @@ export function ImageComparison({
         fill={true}
         sizes="(max-width: 640px) 100vw, 50vw"
         style={{ objectFit: "cover" }}
-        className="z-0"
+        className="z-0 rounded-md"
       />
       <ComparisonVerticalHandleBar leftPos={leftPos} />
     </div>

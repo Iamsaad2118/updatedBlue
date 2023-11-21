@@ -9,14 +9,14 @@ export function DesktopHeader({ className }: { className?: string }) {
     <AppHeader
       className={twMerge("text-xs lg:text-md xl:text-base", className)}
     >
-      <div className="flex items-center flex-1 gap-2 xl:gap-6">
+      <div className="flex items-center flex-1 gap-2 md:gap-4 lg:gap-6">
         <Link href="/">
           <Image
             src="/logo.jpeg"
             alt="Hamaca logo"
             width={100}
             height={100}
-            className="w-auto"
+            priority
           />
         </Link>
         <AppHeader.Nav />
@@ -25,7 +25,7 @@ export function DesktopHeader({ className }: { className?: string }) {
         href="https://discord.com/invite/aDXHy4D8vw"
         target="_blank"
         role="button"
-        className="flex items-center gap-2 px-6 py-2 bg-white text-primary hover:text-accent"
+        className="flex items-center gap-2 px-6 py-2 bg-white text-primary hover:text-accent rounded-sm"
       >
         <span>Join Our Discord</span>
         <Discord />
