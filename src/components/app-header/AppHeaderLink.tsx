@@ -1,5 +1,6 @@
 "use client";
 
+import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import Link, { LinkProps } from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import { PropsWithChildren, useEffect, useState } from "react";
@@ -20,10 +21,20 @@ export function AppHeaderLink({
   }, [href, pathname, params]);
 
   return (
-    <li
-      className={twMerge("p-4 m-2", isActive ? "border-b-4 border-accent" : "")}
-    >
-      <Link {...props}>{children}</Link>
-    </li>
+    <NavigationMenu.Item>
+      <NavigationMenu.Link asChild>
+        <Link
+          {...props}
+          className={twMerge(
+            "relative flex justify-center p-0 md:p-4 m-2",
+            isActive
+              ? "before:absolute before:bottom-0 before:w-full before:h-1 before:bg-accent"
+              : "",
+          )}
+        >
+          {children}
+        </Link>
+      </NavigationMenu.Link>
+    </NavigationMenu.Item>
   );
 }

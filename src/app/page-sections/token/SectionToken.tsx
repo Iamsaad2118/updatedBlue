@@ -1,14 +1,29 @@
+"use client";
+
+import { useInView } from "react-intersection-observer";
+import { twMerge } from "tailwind-merge";
 import { Heading } from "@/components/typography/Heading";
-import { ImageComparison } from "../ImageComparison";
 import { Container } from "@/components/container/Container";
+import { ImageComparison } from "../ImageComparison";
+import { CSSProperties } from "react";
 
 export function SectionToken() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+
   return (
-    <section id="token" className="mb-40">
+    <section ref={ref} id="token" className="py-16">
       <Container>
-        <div className="flex gap-4">
-          <div className="flex-1 h-[550px]">
+        <div className="flex flex-col md:flex-row gap-4">
+          <div
+            className={twMerge(
+              "flex-1 max-h-[550px]",
+              inView ? "lg:motion-safe:animate-slide-in-from-left" : "",
+            )}
+          >
             <ImageComparison
+              className="h-[550px]"
               normalImageProps={{
                 src: "/token.jpeg",
                 alt: "Token",
@@ -19,7 +34,17 @@ export function SectionToken() {
               }}
             />
           </div>
-          <div className="flex-1 h-[550px] overflow-y-scroll text-white">
+          <div
+            className={twMerge(
+              "flex-1 max-h-[550px] overflow-y-scroll custom-scrollbar text-white",
+              inView ? "lg:motion-safe:animate-slide-in-from-right" : "",
+            )}
+            style={
+              {
+                "--custom-scrollbar-color": "var(--accent-color)",
+              } as CSSProperties
+            }
+          >
             <Heading tag="h2" className="sticky top-0 bg-dark pb-6">
               Gary{"'"}s Meme-tacular Tokenomics Reveal! 🐌🪙💡
             </Heading>

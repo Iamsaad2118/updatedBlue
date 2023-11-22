@@ -6,6 +6,11 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --primary-color: #ea792b;
+  --secondary-color: #54595f;
+  --text-color: #7a7a7a;
+  --accent-color: #55aecc;
+  --dark-color: #252525;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,6 +25,7 @@ html {
   --scroll-behavior: smooth !important;
   scroll-behavior: smooth !important;
   scroll-padding-top: 200px;
+  height: 100%;
 }
 
 body {
@@ -30,4 +36,32 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-background iframe {
+    /* height = 100 * (9 / 16) = 56.25 */
+    height: 56.25vw;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-background iframe {
+    /* width = 100 / (9 / 16) = 177.777777 */
+    width: 177.78vh;
+  }
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgb(27, 27, 27);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--custom-scrollbar-color);
+    border-radius: 4px;
+  }
 }

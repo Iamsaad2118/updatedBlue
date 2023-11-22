@@ -4,7 +4,7 @@ import { Timeline } from "./Timeline";
 
 export function SectionRoadMap() {
   return (
-    <section id="road">
+    <section id="road" className="py-16">
       <Container>
         <div className="flex flex-col gap-8 items-center">
           <Heading tag="h2" className="text-white">

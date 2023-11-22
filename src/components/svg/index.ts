@@ -1,1 +1,1 @@
-export { default as Snail } from "./Snail";
+export { default as Decorator } from "./Decorator";

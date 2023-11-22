@@ -5,23 +5,39 @@ interface UseMousePositionProps {
 }
 
 interface MousePosition {
-  x: number;
-  y: number;
+  x: number | null;
+  y: number | null;
 }
 
 export function useMousePosition({ containerRef }: UseMousePositionProps) {
   const [mousePosition, setMousePosition] = React.useState<MousePosition>({
-    x: 0,
-    y: 0,
+    x: null,
+    y: null,
   });
 
   React.useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       if (containerRef.current) {
         const containerRect = containerRef.current.getBoundingClientRect();
+
+        let offsetX = event.clientX - containerRect.left;
+        let offsetY = event.clientY - containerRect.top;
+
+        if (offsetX < 0) {
+          offsetX = 0;
+        } else if (offsetX > containerRect.width) {
+          offsetX = containerRect.width;
+        }
+
+        if (offsetY < 0) {
+          offsetY = 0;
+        } else if (offsetY > containerRect.height) {
+          offsetY = containerRect.height;
+        }
+
         setMousePosition({
-          x: event.clientX - containerRect.left,
-          y: event.clientY - containerRect.top,
+          x: offsetX,
+          y: offsetY,
         });
       }
     };
