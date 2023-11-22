@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import { DesktopHeader } from "@/components/app-header/DesktopHeader";
-import { MobileHeader } from "@/components/app-header/MobileHeader";
-import { Footer } from "@/components/footer/Footer";
 import "./globals.css";
 
 const inter = Poppins({ weight: "400", subsets: ["latin"] });
@@ -27,12 +24,8 @@ export default function RootLayout({
         href="/apple-touch-icon.png"
       />
       <body className={inter.className}>
-        <DesktopHeader className="hidden lg:block" />
-        <MobileHeader className="block lg:hidden" />
         {children}
         {modals}
-        
-        <Footer />
       </body>
     </html>
   );

@@ -4,7 +4,8 @@ import { PropsWithChildren } from "react";
 import Link from "next/link";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { AppHeaderLink } from "./AppHeaderLink";
-import { CaretDown } from "../icons";
+import { CaretDown, Discord, XTwitter } from "../icons";
+import { Button } from "../button/Button";
 
 type AppHeaderNavProps = {
   className?: string;
@@ -13,12 +14,12 @@ type AppHeaderNavProps = {
 export function AppHeaderNav({ className }: AppHeaderNavProps) {
   return (
     <NavigationMenu.Root className={className}>
-      <NavigationMenu.List className="flex flex-col lg:flex-row items-center gap-2 md:gap-4 lg:gap-6">
+      <NavigationMenu.List className="flex flex-col lg:flex-row items-center">
         <AppHeaderLink href="/">Home</AppHeaderLink>
         <AppHeaderLink href="/#save">Save Gary</AppHeaderLink>
         <AppHeaderLink href="/#token">Tokenomics</AppHeaderLink>
         <AppHeaderLink href="/#road">Road Map</AppHeaderLink>
-        <NavigationMenu.Item className="relative p-2">
+        <NavigationMenu.Item className="relative p-2 md:p-4">
           <NavigationMenu.Trigger className="flex items-center gap-2">
             Gary Can Be Serious
             <CaretDown />
@@ -31,14 +32,28 @@ export function AppHeaderNav({ className }: AppHeaderNavProps) {
             </ul>
           </NavigationMenu.Content>
         </NavigationMenu.Item>
-        <NavigationMenu.Item>
+        <NavigationMenu.Item className="relative p-2 md:p-4">
           <a
             href="https://twitter.com/hamacaDAO"
             target="_blank"
             rel="noopener"
+            className="flex items-center gap-2"
           >
-            Message Gary
+            <span>Message Gary</span>
+            <XTwitter />
           </a>
+        </NavigationMenu.Item>
+        <NavigationMenu.Item className="relative p-2 md:p-4">
+          <div>
+            <a
+              href="https://discord.com/invite/aDXHy4D8vw"
+              target="_blank"
+              className="flex items-center gap-2"
+            >
+              <span>Join our Discord</span>
+              <Discord />
+            </a>
+          </div>
         </NavigationMenu.Item>
       </NavigationMenu.List>
     </NavigationMenu.Root>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import { AppHeader } from "./AppHeader";
-import { Discord } from "../icons";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export function DesktopHeader({ className }: { className?: string }) {
   return (
@@ -21,15 +21,7 @@ export function DesktopHeader({ className }: { className?: string }) {
         </Link>
         <AppHeader.Nav />
       </div>
-      <a
-        href="https://discord.com/invite/aDXHy4D8vw"
-        target="_blank"
-        role="button"
-        className="flex items-center gap-2 px-6 py-2 bg-white text-primary hover:text-accent rounded-sm"
-      >
-        <span>Join Our Discord</span>
-        <Discord />
-      </a>
+      <ConnectButton accountStatus="address" />
     </AppHeader>
   );
 }

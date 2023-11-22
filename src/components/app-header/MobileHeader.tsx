@@ -7,6 +7,7 @@ import { AppHeader } from "./AppHeader";
 import { Heading } from "../typography/Heading";
 import { Button } from "../button/Button";
 import { Bars, Discord, Xmark } from "../icons";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 export function MobileHeader({ className }: { className?: string }) {
   const [open, setOpen] = React.useState(false);
@@ -28,17 +29,8 @@ export function MobileHeader({ className }: { className?: string }) {
         <Heading tag="h2" className="text-center">
           Welcome to Hamaca.io
         </Heading>
-        <div>
-          <a href="https://discord.com/invite/aDXHy4D8vw" target="_blank">
-            <Button
-              variant="secondary"
-              className="flex items-center gap-2 text-accent"
-            >
-              <span>Join Our Discord</span>
-              <Discord />
-            </Button>
-          </a>
-        </div>
+        <ConnectButton accountStatus="address" />
+
         <Button
           onClick={() => setOpen(!open)}
           className="text-xl"
